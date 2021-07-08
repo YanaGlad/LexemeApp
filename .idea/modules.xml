@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TinkoffSiriusAppTry8.iml" filepath="$PROJECT_DIR$/.idea/modules/TinkoffSiriusAppTry8.iml" group="TinkoffSiriusAppTry8" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="TinkoffSiriusAppTry8/app" />
+    </modules>
+  </component>
+</project>
