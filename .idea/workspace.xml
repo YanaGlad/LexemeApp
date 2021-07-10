@@ -36,6 +36,7 @@
         <option value="valueResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -63,6 +64,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.gladkikh.lexeme" />
       <recent name="com.example.tinkoffsiriusapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -191,10 +193,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="435" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1623010903964" />
-    <state x="710" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1623000352895">
+    <state x="710" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1625897601854">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="710" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.864@0.0.1536.864" timestamp="1623000352895" />
+    <state x="710" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.864@0.0.1536.864" timestamp="1625897601854" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1623537083920">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -203,10 +205,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="226" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1623005843728" />
-    <state x="560" y="195" key="AndroidCreateResourceFileDialog" timestamp="1623097110901">
+    <state x="560" y="195" key="AndroidCreateResourceFileDialog" timestamp="1625898486372">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="560" y="195" key="AndroidCreateResourceFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1623097110901" />
+    <state x="560" y="195" key="AndroidCreateResourceFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1625898486372" />
     <state x="442" y="272" width="281" height="367" key="AndroidCreateXmlResourceDialog" timestamp="1623005374263">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -219,30 +221,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="783" y="212" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1624918033797" />
-    <state width="1491" height="284" key="GridCell.Tab.0.bottom" timestamp="1625784961189">
+    <state width="1491" height="284" key="GridCell.Tab.0.bottom" timestamp="1625900173403">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1625784961189" />
-    <state width="1491" height="284" key="GridCell.Tab.0.center" timestamp="1625784961189">
+    <state width="1491" height="284" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
+    <state width="1491" height="284" key="GridCell.Tab.0.center" timestamp="1625900173403">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1625784961189" />
-    <state width="1491" height="284" key="GridCell.Tab.0.left" timestamp="1625784961188">
+    <state width="1491" height="284" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
+    <state width="1491" height="284" key="GridCell.Tab.0.left" timestamp="1625900173403">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1625784961188" />
-    <state width="1491" height="284" key="GridCell.Tab.0.right" timestamp="1625784961189">
+    <state width="1491" height="284" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
+    <state width="1491" height="284" key="GridCell.Tab.0.right" timestamp="1625900173403">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1625784961189" />
-    <state x="422" y="119" width="980" height="642" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1623102046278">
+    <state width="1491" height="284" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
+    <state x="422" y="119" width="980" height="642" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1625900084967">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="422" y="119" width="980" height="642" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1623102046278" />
-    <state x="482" y="137" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1623006446948">
+    <state x="422" y="119" width="980" height="642" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1625900084967" />
+    <state x="151" y="134" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1625898464753">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="482" y="137" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1623006446948" />
+    <state x="151" y="134" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1625898464753" />
     <state x="575" y="280" key="com.intellij.ide.util.TipDialog" timestamp="1624107497528">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -251,13 +253,13 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="402" y="47" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.864@0.0.1536.864" timestamp="1625760989312" />
-    <state x="566" y="201" key="run.anything.popup" timestamp="1625782266888">
+    <state x="566" y="201" key="run.anything.popup" timestamp="1625896633051">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="566" y="201" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1625782266888" />
-    <state x="778" y="185" width="672" height="678" key="search.everywhere.popup" timestamp="1623009931785">
+    <state x="566" y="201" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1625896633051" />
+    <state x="778" y="185" width="672" height="678" key="search.everywhere.popup" timestamp="1625895026494">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="778" y="185" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1623009931785" />
+    <state x="778" y="185" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1625895026494" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme.lexemeBackend;
+package com.gladkikh.lexeme;
 
 public enum Id_lexemes {
     //пре-унарные операторы, высший приоритет

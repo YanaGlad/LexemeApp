@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme.lexemeBackend;
+package com.gladkikh.lexeme;
 
 import java.util.ArrayList;
 
