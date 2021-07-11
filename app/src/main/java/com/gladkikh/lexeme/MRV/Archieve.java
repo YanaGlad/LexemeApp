@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme;
+package com.gladkikh.lexeme.MRV;
 
 import java.util.ArrayList;
 //token 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

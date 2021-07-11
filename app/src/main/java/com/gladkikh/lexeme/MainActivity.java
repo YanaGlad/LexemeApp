@@ -3,6 +3,10 @@ package com.gladkikh.lexeme;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -11,6 +15,8 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.gladkikh.lexeme.MRV.ErrorHandler;
+import com.gladkikh.lexeme.MRV.MRV;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -23,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText, editTextVar;
     private TextView textResult;
     private LinearLayoutCompat keysLayout, valuesLayout;
-    private FloatingActionButton floatingActionButton;
+    private FloatingActionButton floatingActionButton, restartButton;
     private int N = 1;
 
     @Override
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         textResult = findViewById(R.id.result);
         keysLayout = findViewById(R.id.keys);
         valuesLayout = findViewById(R.id.values);
+        restartButton = findViewById(R.id.floatingRestart);
 
         floatingActionButton = findViewById(R.id.buttonFloat);
 
@@ -55,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 EditText editText = new EditText(getApplicationContext());
                 editText.setTextColor(Color.WHITE);
-                editText.setHint("x" + (i+1));
+                editText.setHint("x" + (i + 1));
                 editText.setHintTextColor(Color.GRAY);
                 editText.getBackground()
                         .setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
@@ -90,38 +97,84 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(values.get(i));
             }
 
+            String temp = "";
             try {
-                textResult.setText("Result" + "\n" + String.valueOf(MRV.count_lexemes(editText.getText().toString(), keys, values)));
-            } catch (MRV_ARGUMENT_LIST_MISMATCH error) {
-                textResult.setText("Списки аргументов не соответствуют.");
-            } catch (MRV_UNKNOWN_FUNCTION error) {
-                textResult.setText("Неизвестная функция от : " + Integer.toString (error.getError_begin ()) + " до: " + Integer.toString (error.getError_end ()));
-            } catch (MRV_ERROR_SIGNS error) {
-                textResult.setText("Какое-то из чисел записано с ошибкой: слишком много точек." + "Место ошибки: " + Integer.toString (error.getError_begin ()));
-            } catch (MRV_IMPOSSIBLE_COUNT error) {
-                textResult.setText("Функцию в заданной точке невозможно вычислить. Начало функции: "
-                        + Integer.toString (error.getError_begin ()) + " конец: " + Integer.toString (error.getError_end ()));
-            } catch (MRV_MISS_ARGUMENT_BINARY_OPERATOR error) {
-                textResult.setText("У какого-то из бинарных операторов отсутствует аргумент." + "Ошибка от: "
-                        + Integer.toString (error.getError_begin ()) + " до: " + Integer.toString (error.getError_end ()));
-            } catch (MRV_MISS_ARGUMENT_PRE_OPERATOR error) {
-                textResult.setText("У какого-то из преоператоров отсутствует аргумент." + "Ошибка от: "
-                        + Integer.toString (error.getError_begin ()) + " до: " + Integer.toString (error.getError_end ()));
-            } catch (MRV_MISS_ARGUMENT_POST_OPERATOR error) {
-                textResult.setText("У какого-то из постоператоров отсутствует аргумент." + "Ошибка от: " +
-                        Integer.toString (error.getError_begin ()) + " до: " + Integer.toString (error.getError_end ()));
-            } catch (MRV_HAVE_OPEN_BRACKETS error) {
-                textResult.setText("Есть незакрытая скобка." + "Не закрыта: " + Integer.toString (error.getError_begin ()));
-            } catch (MRV_MORE_RIGHT_BRACKETS error) {
-                textResult.setText("Закрыто больше скобок, чем открыто.");
-            } catch (MRV_BAD_ARGUMENTS error) {
-                textResult.setText("У какого-то операторов недостаточно или слишком много аргументов." + "Ошибка от: "
-                        + Integer.toString (error.getError_begin ()) + " до: " + Integer.toString (error.getError_end ()));
-            } catch (MRV_UNKNOWN_ERROR error) {
-                textResult.setText("Неизвестная ошибка.");
-            }
+                temp = "Result" + "\n" + String.valueOf(MRV.count_lexemes(editText.getText().toString(), keys, values));
+            } catch (MRV.ARGUMENT_LIST_MISMATCH error) {
+                temp = "Списки аргументов не соответствуют.";
+            } catch (MRV.UNKNOWN_FUNCTION error) {
+                temp = "Неизвестная функция ";
+                redText(error.getError_begin(), error.getError_end());
+            } catch (MRV.ERROR_SIGNS error) {
+                temp = "Какое-то из чисел записано с ошибкой: слишком много точек." + "Место ошибки: " + Integer.toString(error.getError_begin());
+                redText(error.getError_begin(), error.getError_end());
+            } catch (MRV.IMPOSSIBLE_COUNT error) {
+                temp = "Функцию в заданной точке невозможно вычислить.";
+                redText(error.getError_begin(), error.getError_end());
 
-         });
+            } catch (MRV.MISS_ARGUMENT_BINARY_OPERATOR error) {
+                temp = "У какого-то из бинарных операторов отсутствует аргумент.";
+                redText(error.getError_begin(), error.getError_end());
+            } catch (MRV.MISS_ARGUMENT_PRE_OPERATOR error) {
+                temp = "У какого-то из преоператоров отсутствует аргумент.";
+                redText(error.getError_begin(), error.getError_end());
+            } catch (MRV.MISS_ARGUMENT_POST_OPERATOR error) {
+                temp = "У какого-то из постоператоров отсутствует аргумент." + "Ошибка от: " + error.getError_begin() + " до: " + error.getError_end();
+            } catch (MRV.HAVE_OPEN_BRACKETS error) {
+                temp = "Есть незакрытая скобка.";
+                redText(error.getError_begin(), error.getError_end());
+            } catch (MRV.MORE_RIGHT_BRACKETS error) {
+                temp = "Закрыто больше скобок, чем открыто.";
+            } catch (MRV.BAD_ARGUMENTS error) {
+                temp = "У какого-то операторов недостаточно или слишком много аргументов.";
+                redText(error.getError_begin(), error.getError_end());
+            } catch (MRV.UNKNOWN_ERROR error) {
+                temp = "Неизвестная ошибка.";
+            }
+            textResult.setText(temp);
+            restartButton.setVisibility(View.VISIBLE);
+        });
+
+        restartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textResult.setText("");
+                editText.setText("");
+                editTextVar.setText("");
+                keysLayout.removeAllViews();
+                valuesLayout.removeAllViews();
+                keys.clear();
+                values.clear();
+                ErrorHandler.set_default();
+                restartButton.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    public void redText(int error_begin, int error_end) {
+        String full = editText.getText().toString();
+        editText.setText("");
+        Spannable word0;
+        System.out.println("Error begin : " + error_begin + " error end : " + error_end);
+        if (error_begin != 0) {
+            word0 = new SpannableString(full.substring(0, error_begin));
+            word0.setSpan(new ForegroundColorSpan(Color.WHITE), 0, word0.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        } else word0 = new SpannableString("");
+        System.out.println("Word 0 : " + word0);
+        editText.setText(word0);
+
+
+        Spannable word = new SpannableString(full.substring(error_begin, error_end + 1));
+        word.setSpan(new ForegroundColorSpan(Color.RED), 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        System.out.println("Word1: " + word);
+        editText.append(word);
+
+        Spannable wordTwo = new SpannableString(full.substring(error_end + 1, full.length()));
+        System.out.println("Error end: " + error_end + " len " + full.length());
+        System.out.println("Word2 : " + wordTwo);
+        wordTwo.setSpan(new ForegroundColorSpan(Color.WHITE), 0, wordTwo.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        editText.append(wordTwo);
     }
 }
 

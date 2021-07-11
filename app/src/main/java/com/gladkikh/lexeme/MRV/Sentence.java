@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme;
+package com.gladkikh.lexeme.MRV;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,6 @@ public class Sentence {
     public Sentence(String input)
     {
         int pos = 0;
-        int left_brs = 0;
-        int right_brs = 0;
         while (pos < input.length())
         {
             while (pos < input.length() && input.charAt(pos) == ' ')pos++;
@@ -96,8 +94,15 @@ public class Sentence {
                 }
             }
         }
-        if (have_errors ()) {
-            return;
+        int left_brs = 0, right_brs = 0;
+        for (int i = 0; i < _array.size (); i++)
+        {
+            if (_array.get (i).get_id () == Id_lexemes.LEFT_BR) left_brs++;
+            else if(_array.get (i).get_id () == Id_lexemes.RIGHT_BR) right_brs++;
+            if (right_brs > left_brs){
+                ErrorHandler.setError (Id_errors.MORE_RIGHT_BRACKETS, _array.get (i));
+                return;
+            }
         }
         if (left_brs == right_brs)
         {
@@ -139,7 +144,7 @@ public class Sentence {
         _array.remove(i);
     }
     //заменить лексему x на значение
-    void substitute(ArrayList<String> keys, ArrayList<Double> values)
+    public void substitute(ArrayList<String> keys, ArrayList<Double> values)
     {
         for (int i = 0; i < keys.size(); i++) {
             String key = keys.get(i);
@@ -238,56 +243,56 @@ public class Sentence {
     }
     boolean have_errors()
     {
-//        int n = _array.size() - 1;
-//        if (Archieve.get_left_argue(_array.get(0).get_id()) == 0 && Archieve.get_right_argue(_array.get(n).get_id()) == 0)
-//        {
-//            for (int i = 1; i < n; i++)
-//            {
-//                Id_lexemes cur_id = _array.get(i).get_id();
-//                int left = Archieve.get_left_argue(cur_id);
-//                int right = Archieve.get_right_argue(cur_id);
-//                if (left > 0 && right > 0)
-//                {
-//                    if (Archieve.get_right_argue(_array.get(i - 1).get_id()) == 0 && Archieve.get_left_argue(_array.get(i + 1).get_id()) == 0)
-//                    {
-//
-//                    }
-//					else
-//                    {
-//                        ErrorHandler.setError( Id_errors.MISS_ARGUMENT_BINARY_OPERATOR, _array.get (i)  );
-//                        return true;
-//                    }
-//                }
-//				else if (left > 0)
-//            {
-//                if (Archieve.get_right_argue(_array.get(i - 1).get_id()) == 0 && Archieve.get_left_argue(_array.get(i+1).get_id()) != 0)
-//                {
-//
-//                }
-//					else
-//                {
-//                    ErrorHandler.setError( Id_errors.MISS_ARGUMENT_POST_OPERATOR, _array.get (i) );
-//                    return true;
-//                }
-//            }
-//            else if (right > 0)
-//            {
-//                if (Archieve.get_left_argue(_array.get(i + 1).get_id()) == 0 && Archieve.get_right_argue(_array.get(i - 1).get_id()) != 0)
-//                {
-//
-//                }
-//					else
-//                {
-//                    ErrorHandler.setError( Id_errors.MISS_ARGUMENT_PRE_OPERATOR, _array.get (i) );
-//                    return true;
-//                }
-//            }
-//            }
-//        }
+        int n = _array.size() - 1;
+        if (Archieve.get_left_argue(_array.get(0).get_id()) == 0 && Archieve.get_right_argue(_array.get(n).get_id()) == 0)
+        {
+            for (int i = 1; i < n; i++)
+            {
+                Id_lexemes cur_id = _array.get(i).get_id();
+                int left = Archieve.get_left_argue(cur_id);
+                int right = Archieve.get_right_argue(cur_id);
+                if (left > 0 && right > 0)
+                {
+                    if (Archieve.get_right_argue(_array.get(i - 1).get_id()) == 0 && Archieve.get_left_argue(_array.get(i + 1).get_id()) == 0)
+                    {
+
+                    }
+					else
+                    {
+                        ErrorHandler.setError( Id_errors.MISS_ARGUMENT_BINARY_OPERATOR, _array.get (i)  );
+                        return true;
+                    }
+                }
+				else if (left > 0)
+            {
+                if (Archieve.get_right_argue(_array.get(i - 1).get_id()) == 0 && Archieve.get_left_argue(_array.get(i+1).get_id()) != 0)
+                {
+
+                }
+					else
+                {
+                    ErrorHandler.setError( Id_errors.MISS_ARGUMENT_POST_OPERATOR, _array.get (i) );
+                    return true;
+                }
+            }
+            else if (right > 0)
+            {
+                if (Archieve.get_left_argue(_array.get(i + 1).get_id()) == 0 && Archieve.get_right_argue(_array.get(i - 1).get_id()) != 0)
+                {
+
+                }
+					else
+                {
+                    ErrorHandler.setError( Id_errors.MISS_ARGUMENT_PRE_OPERATOR, _array.get (i) );
+                    return true;
+                }
+            }
+            }
+        }
         return false;
     }
     //посчитать значение предложения
-    Lexeme  count() {
+    public Lexeme count() {
         int a = find_left_br();
         while (a != -1) //избавляемся от скобок
         {
@@ -326,6 +331,9 @@ public class Sentence {
                 this.replace_sector( a, b, replace );
             }
             a = find_left_br();
+        }
+        if (have_errors ()) {
+            return new Lexeme (Id_lexemes.END);
         }
         a = find_highest_priority();
         while (a != 0) {

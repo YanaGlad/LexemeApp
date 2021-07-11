@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme;
+package com.gladkikh.lexeme.MRV;
 
 public enum Id_lexemes {
     //пре-унарные операторы, высший приоритет

@@ -63,6 +63,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -96,12 +97,13 @@
 
                 <EditText
                     android:id="@+id/editText"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:hint="cos(x)*ln(x)+20"
+                    android:hint="Ввод выржаения, например : cos(x)*ln(x)"
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/secondary_text_dark"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -111,10 +113,11 @@
                     android:id="@+id/editTextVar"
                     android:layout_width="0dp"
                     android:layout_height="51dp"
-                    android:hint="Число аргументов"
+                    android:hint="Ведите число аргументов"
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/secondary_text_dark"
-                    app:layout_constraintEnd_toStartOf="@+id/buttonFloat"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_compute"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -125,6 +128,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:weightSum="2"
+                    app:layout_constraintBottom_toTopOf="@+id/result"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btn_compute">
@@ -158,6 +162,7 @@
                     app:backgroundTint="@drawable/button_style"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/subtitle2"
                     app:tint="@android:color/white" />
@@ -166,36 +171,63 @@
                     android:id="@+id/viewPager2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="10sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/result" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/buttonFloat"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginEnd="1dp"
-                    android:src="@android:drawable/ic_menu_send"
-                    app:backgroundTint="@drawable/button_style"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextVar"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayoutCompat3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_compute"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/editTextVar"
-                    app:layout_constraintTop_toBottomOf="@+id/editText" />
+                    app:layout_constraintStart_toEndOf="@+id/btn_compute"
+                    app:layout_constraintTop_toBottomOf="@+id/editText">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/buttonFloat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:src="@android:drawable/ic_menu_send"
+                        app:backgroundTint="@drawable/button_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/editTextVar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/editTextVar"
+                        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingRestart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.163"
+                        app:layout_constraintStart_toEndOf="@+id/btn_compute"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonFloat"
+                        app:srcCompat="@android:drawable/ic_menu_revert" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <TextView
                     android:id="@+id/result"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
+                    android:layout_marginTop="25sp"
                     android:gravity="center"
                     android:textColor="#FFFFFF"
                     android:textSize="25sp"
                     app:layout_collapseMode="parallax"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3"
                     tools:text="Result: 10" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

@@ -10,7 +10,37 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f10e37e-0329-4d07-b89c-98c69d484854" name="Default Changelist" comment="" />
+    <list default="true" id="5f10e37e-0329-4d07-b89c-98c69d484854" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Archieve.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/ErrorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Function.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Id_errors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Id_lexemes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Lexeme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/MRV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Operator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Priority_operators.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/RecyclerLexemeAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/RecyclerLexemeHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Sentence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/Support.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/logoru2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,10 +87,10 @@
     <property name="ApkExportedModule" value="app" />
     <property name="BundleExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_26_3" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-17T20:55:25.853Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-07-11T08:38:20.817Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/gladkikh/lexeme/lexemeBackend" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Projects/CatUniverse3/CatUniverse2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -68,11 +98,11 @@
       <recent name="com.example.tinkoffsiriusapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\glad\AndroidStudioProjects\LEXEME\app\src\main\java\com\gladkikh\lexeme" />
       <recent name="C:\Users\glad\AndroidStudioProjects\LEXEME\app\src\main\java\com\gladkikh\lexeme\lexemeBackend" />
       <recent name="C:\Users\glad\AndroidStudioProjects\LEXEME\app\src\main\assets" />
       <recent name="C:\Users\glad\AndroidStudioProjects\LEXEME\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\glad\AndroidStudioProjects\LEXEME\app\src\main\res\layout" />
-      <recent name="C:\Users\glad\AndroidStudioProjects\LEXEME\app\src\main\res\values" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -201,10 +231,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1623537083920" />
-    <state x="226" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623005843728">
+    <state x="226" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625944540009">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="226" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1623005843728" />
+    <state x="226" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1625944540009" />
     <state x="560" y="195" key="AndroidCreateResourceFileDialog" timestamp="1625898486372">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -217,46 +247,46 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="126" y="122" width="1006" height="633" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1623006362290" />
-    <state x="783" y="212" key="FileChooserDialogImpl" timestamp="1624918033797">
+    <state x="783" y="212" key="FileChooserDialogImpl" timestamp="1625949934352">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="783" y="212" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1624918033797" />
-    <state width="1491" height="284" key="GridCell.Tab.0.bottom" timestamp="1625900173403">
+    <state x="783" y="212" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1625949934352" />
+    <state width="1490" height="309" key="GridCell.Tab.0.bottom" timestamp="1626006120404">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
-    <state width="1491" height="284" key="GridCell.Tab.0.center" timestamp="1625900173403">
+    <state width="1490" height="309" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1626006120404" />
+    <state width="1490" height="309" key="GridCell.Tab.0.center" timestamp="1626006120404">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
-    <state width="1491" height="284" key="GridCell.Tab.0.left" timestamp="1625900173403">
+    <state width="1490" height="309" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1626006120404" />
+    <state width="1490" height="309" key="GridCell.Tab.0.left" timestamp="1626006120404">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
-    <state width="1491" height="284" key="GridCell.Tab.0.right" timestamp="1625900173403">
+    <state width="1490" height="309" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1626006120404" />
+    <state width="1490" height="309" key="GridCell.Tab.0.right" timestamp="1626006120404">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="284" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1625900173403" />
+    <state width="1490" height="309" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1626006120404" />
     <state x="422" y="119" width="980" height="642" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1625900084967">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="422" y="119" width="980" height="642" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1625900084967" />
-    <state x="151" y="134" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1625898464753">
+    <state x="151" y="134" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1626034335951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="151" y="134" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1625898464753" />
-    <state x="575" y="280" key="com.intellij.ide.util.TipDialog" timestamp="1624107497528">
+    <state x="151" y="134" width="980" height="642" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1626034335951" />
+    <state x="575" y="280" key="com.intellij.ide.util.TipDialog" timestamp="1626027106029">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="575" y="280" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1624107497528" />
+    <state x="575" y="280" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1626027106029" />
     <state x="402" y="47" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1625760989312">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="402" y="47" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.864@0.0.1536.864" timestamp="1625760989312" />
-    <state x="566" y="201" key="run.anything.popup" timestamp="1625896633051">
+    <state x="566" y="201" key="run.anything.popup" timestamp="1626003755337">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="566" y="201" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1625896633051" />
+    <state x="566" y="201" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1626003755337" />
     <state x="778" y="185" width="672" height="678" key="search.everywhere.popup" timestamp="1625895026494">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

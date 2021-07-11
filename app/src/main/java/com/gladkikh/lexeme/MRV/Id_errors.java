@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme;
+package com.gladkikh.lexeme.MRV;
 
 public enum Id_errors {
     NON_ERROR, ERROR_SIGNS, UNKNOWN_FUNCTION, IMPOSSIBLE_COUNT, BAD_ARGUMENTS, MORE_RIGHT_BRACKETS, HAVE_OPEN_BRACKETS,
