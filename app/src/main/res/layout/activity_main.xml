@@ -81,8 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="106dp"
+                    android:layout_marginBottom="120dp"
                     android:gravity="center"
                     android:text="Введите выражение:"
                     android:textColor="#FFFFFF"
@@ -90,7 +89,7 @@
                     app:layout_collapseMode="parallax"
                     app:layout_constraintBottom_toTopOf="@+id/btn_compute"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
@@ -104,23 +103,27 @@
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/secondary_text_dark"
                     android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_compute"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/subtitle2" />
+                    app:layout_constraintTop_toBottomOf="@+id/subtitle2"
+                    app:layout_constraintVertical_bias="0.102" />
 
                 <EditText
                     android:id="@+id/editTextVar"
-                    android:layout_width="0dp"
+                    android:layout_width="252dp"
                     android:layout_height="51dp"
                     android:hint="Ведите число аргументов"
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/secondary_text_dark"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toTopOf="@+id/btn_compute"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText" />
-
+                    app:layout_constraintTop_toBottomOf="@+id/editText"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/linearLayout"
@@ -128,7 +131,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:weightSum="2"
-                    app:layout_constraintBottom_toTopOf="@+id/result"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btn_compute">
@@ -172,9 +174,12 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/result" />
+                    app:layout_constraintTop_toBottomOf="@+id/result"
+                    app:layout_constraintVertical_bias="0.081" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/linearLayoutCompat3"
@@ -204,6 +209,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:visibility="invisible"
+                        android:layout_marginTop="5sp"
                         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.163"
@@ -217,15 +223,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:layout_marginTop="25sp"
                     android:gravity="center"
                     android:textColor="#FFFFFF"
                     android:textSize="25sp"
                     app:layout_collapseMode="parallax"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                     tools:text="Result: 10" />
 
 
