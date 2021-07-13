@@ -15,7 +15,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.gladkikh.lexeme.MRV.ErrorHandler;
+import com.gladkikh.lexeme.Lexemes.ErrorHandler;
 import com.gladkikh.lexeme.MRV.MRV;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutCompat keysLayout, valuesLayout;
     private FloatingActionButton floatingActionButton, restartButton;
     private int N = 1;
+    private ArrayList<String> keys = new ArrayList<>();
+    private ArrayList<Double> values = new ArrayList<>();
+    private ArrayList<EditText> editTextsKey = new ArrayList<>();
+    private ArrayList<EditText> editTextsValue = new ArrayList<>();
+
+    static int step = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = findViewById(R.id.btn_compute);
+        button.setEnabled(false);
+
         editText = findViewById(R.id.editText);
         editTextVar = findViewById(R.id.editTextVar);
         textResult = findViewById(R.id.result);
@@ -51,11 +59,10 @@ public class MainActivity extends AppCompatActivity {
         FragmentStateAdapter pageAdapter = new MyAdapter(this);
         pager.setAdapter(pageAdapter);
 
-        ArrayList<String> keys = new ArrayList<>();
-        ArrayList<Double> values = new ArrayList<>();
-        ArrayList<EditText> editTexts = new ArrayList<>();
 
         floatingActionButton.setOnClickListener(v -> {
+            ErrorHandler.set_default();
+
             N = Integer.parseInt(editTextVar.getText().toString());
 
             for (int i = 0; i < N; i++) {
@@ -66,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 editText.setHintTextColor(Color.GRAY);
                 editText.getBackground()
                         .setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+                editText.setId(i + 10001);
                 keysLayout.addView(editText);
-                editTexts.add(editText);
+                editTextsKey.add(editText);
 
                 EditText val = new EditText(getApplicationContext());
                 val.setTextColor(Color.WHITE);
@@ -75,32 +83,55 @@ public class MainActivity extends AppCompatActivity {
                 val.setHintTextColor(Color.GRAY);
                 val.getBackground()
                         .setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+                editText.setId(i + 200);
                 valuesLayout.addView(val);
-                editTexts.add(val);
+                editTextsValue.add(val);
 
             }
 
-
+            button.setEnabled(true);
+            floatingActionButton.setEnabled(false);
         });
 
         button.setOnClickListener(v -> {
 
-            for (int i = 0; i < N * 2; i++)
-                if (i % 2 == 0)
-                    keys.add(editTexts.get(i).getText().toString());
-                else
-                    values.add(Double.parseDouble(editTexts.get(i).getText().toString()));
+
+            for (int i = 0; i < N; i++) {
+                System.out.println("I is " + i);
+
+                View view = valuesLayout;
+                EditText editText = valuesLayout.findViewById(i + 10001);
+
+                System.out.println(editText);
+
+                keys.add(editTextsKey.get(i + step).getText().toString());
+                System.out.println("ADD KEY " + editTextsKey.get(i + step).getText().toString());
+
+                values.add(Double.parseDouble(editTextsValue.get(i + step).getText().toString()));
+                System.out.println("ADD VALUE " + editTextsValue.get(i + step).getText().toString());
+
+            }
 
 
             for (int i = 0; i < keys.size(); i++) {
                 System.out.println(keys.get(i));
                 System.out.println(values.get(i));
             }
+            ErrorHandler.set_default();
+            System.out.println("!!!!!!!!Error begin : " + ErrorHandler.get_begin_error() + " error end : " + ErrorHandler.get_end_error());
+            System.out.println("ED string is... " + editText.getText().toString());
+            for (int i = 0; i < keys.size(); i++) {
+                System.out.println("Key " + i + " is " + keys.get(i));
+            }
+            for (int i = 0; i < values.size(); i++) {
+                System.out.println("Value " + i + " is " + values.get(i));
+            }
 
             String temp = "";
             try {
                 temp = "Result" + "\n" + String.valueOf(MRV.count_lexemes(editText.getText().toString(), keys, values));
             } catch (MRV.ARGUMENT_LIST_MISMATCH error) {
+
                 temp = "Списки аргументов не соответствуют.";
             } catch (MRV.UNKNOWN_FUNCTION error) {
                 temp = "Неизвестная функция ";
@@ -111,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
             } catch (MRV.IMPOSSIBLE_COUNT error) {
                 temp = "Функцию в заданной точке невозможно вычислить.";
                 redText(error.getError_begin(), error.getError_end());
-
             } catch (MRV.MISS_ARGUMENT_BINARY_OPERATOR error) {
                 temp = "У какого-то из бинарных операторов отсутствует аргумент.";
                 redText(error.getError_begin(), error.getError_end());
@@ -138,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                step++;
                 textResult.setText("");
                 editText.setText("");
                 editTextVar.setText("");
@@ -147,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
                 values.clear();
                 ErrorHandler.set_default();
                 restartButton.setVisibility(View.GONE);
+                button.setEnabled(false);
+                floatingActionButton.setEnabled(true);
             }
         });
     }

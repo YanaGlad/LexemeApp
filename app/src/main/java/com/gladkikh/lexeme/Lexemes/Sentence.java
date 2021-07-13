@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme.MRV;
+package com.gladkikh.lexeme.Lexemes;
 
 import java.util.ArrayList;
 
@@ -72,7 +72,7 @@ public class Sentence {
                     }
                     if (max_id == -1)
                     {
-                            int end = pos;
+                            int end = pos - 1;
                             ErrorHandler.setError( Id_errors.UNKNOWN_FUNCTION, begin, end);
                             return;
                     }

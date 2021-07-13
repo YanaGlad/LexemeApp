@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme.MRV;
+package com.gladkikh.lexeme.Lexemes;
 
 import java.util.ArrayList;
 

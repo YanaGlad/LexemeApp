@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme.MRV;
+package com.gladkikh.lexeme.Lexemes;
 
 import java.util.ArrayList;
 //token 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
@@ -6,7 +6,7 @@ public class Archieve {
     static ArrayList<Operator> base = new ArrayList<>();
     public Archieve(ArrayList<String> variables){
         int n = Id_lexemes.getId(Id_lexemes.NUMBER_OPERATORS);
-        for (int i = 0; i < n; i++) {
+        for (; base.size() < n;) {
             base.add(new Sin());
         }
         add_operator(new Argument());

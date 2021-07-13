@@ -1,4 +1,4 @@
-package com.gladkikh.lexeme.MRV;
+package com.gladkikh.lexeme.Lexemes;
 
 public enum Priority_operators {
     END, PRIOR_BOOL_FUNC, PRIOR_PLUS_MINUS, PRIOR_MULT_DIV, PRIOR_POW, PRIOR_FUNC;
