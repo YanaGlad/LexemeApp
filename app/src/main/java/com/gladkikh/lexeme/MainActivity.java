@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<EditText> editTextsKey = new ArrayList<>();
     private ArrayList<EditText> editTextsValue = new ArrayList<>();
 
-    static int step = 0;
+    private static int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+      //  setContentView(R.layout.activity_main);
 
         button = findViewById(R.id.btn_compute);
         button.setEnabled(false);
@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 editText.setHintTextColor(Color.GRAY);
                 editText.getBackground()
                         .setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
-                editText.setId(i + 10001);
+
+
                 keysLayout.addView(editText);
                 editTextsKey.add(editText);
 
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 val.setHintTextColor(Color.GRAY);
                 val.getBackground()
                         .setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
-                editText.setId(i + 200);
                 valuesLayout.addView(val);
                 editTextsValue.add(val);
 
@@ -93,22 +93,20 @@ public class MainActivity extends AppCompatActivity {
             floatingActionButton.setEnabled(false);
         });
 
+
         button.setOnClickListener(v -> {
 
 
             for (int i = 0; i < N; i++) {
                 System.out.println("I is " + i);
 
-                View view = valuesLayout;
-                EditText editText = valuesLayout.findViewById(i + 10001);
-
                 System.out.println(editText);
 
-                keys.add(editTextsKey.get(i + step).getText().toString());
-                System.out.println("ADD KEY " + editTextsKey.get(i + step).getText().toString());
+                keys.add(editTextsKey.get(i).getText().toString());
+                System.out.println("ADD KEY " + editTextsKey.get(i).getText().toString());
 
-                values.add(Double.parseDouble(editTextsValue.get(i + step).getText().toString()));
-                System.out.println("ADD VALUE " + editTextsValue.get(i + step).getText().toString());
+                values.add(Double.parseDouble(editTextsValue.get(i).getText().toString()));
+                System.out.println("ADD VALUE " + editTextsValue.get(i).getText().toString());
 
             }
 
@@ -168,12 +166,14 @@ public class MainActivity extends AppCompatActivity {
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                step++;
+                // step++;
                 textResult.setText("");
                 editText.setText("");
                 editTextVar.setText("");
                 keysLayout.removeAllViews();
                 valuesLayout.removeAllViews();
+                editTextsKey.clear();
+                editTextsValue.clear();
                 keys.clear();
                 values.clear();
                 ErrorHandler.set_default();
