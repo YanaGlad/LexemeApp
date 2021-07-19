@@ -11,7 +11,7 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@android:drawable/ic_menu_sort_by_size"
-            android:title="Матрицы и операции над ними" />
+            android:title="Матрицы" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@android:drawable/ic_menu_sort_by_size"

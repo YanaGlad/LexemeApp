@@ -28,7 +28,8 @@ public class ActionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        text = getArguments() != null ? getArguments().getString("type") : "Лексемы";
+        text = getArguments().getString("type");
+
     }
 
     @Override
@@ -38,6 +39,11 @@ public class ActionFragment extends Fragment {
 
         TextView pageHeader = (TextView) result.findViewById(R.id.displayText);
         pageHeader.setText(text);
+
+        switch (text){
+
+        }
+
         return result;
     }
 }

@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.tinkoffsiriusapptry8.ui.home.HomeFragment"
+        android:name="com.example.tinkoffsiriusapptry8.ui.home.LexemeFragment"
         android:label="Значения функции в точках"
         tools:layout="@layout/fragment_lexeme" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.tinkoffsiriusapptry8.ui.gallery.GalleryFragment"
-        android:label="Матрицы и опарации над ними"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.example.tinkoffsiriusapptry8.ui.gallery.MatrixFragment"
+        android:label="Матрицы"
+        tools:layout="@layout/fragment_matrix" />
 
     <fragment
         android:id="@+id/nav_slideshow"

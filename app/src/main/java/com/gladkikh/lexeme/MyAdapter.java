@@ -13,24 +13,22 @@ public class MyAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        String type = "Лексемы";
+        String type = "Показать историю ввода";
         switch (position) {
             case 0:
-                type = "Лексемы";
+                type = "Показать историю ввода";
                 break;
 
             case 1:
-                type = "Матрицы, определитель, транспонирование";
+                type = "О приложении";
                 break;
 
-            case 2:
-                type = "Жорданова форма матрицы";
         }
         return (ActionFragment.newInstance(type));
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 2;
     }
 }
